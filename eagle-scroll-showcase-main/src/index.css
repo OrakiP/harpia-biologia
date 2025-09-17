@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Harpia Design System - Majestade da águia mais poderosa do mundo */
+
+@layer base {
+  :root {
+    /* Cores inspiradas na Harpia - tons naturais e majestosos */
+    --background: 220 15% 6%;
+    --foreground: 45 15% 92%;
+
+    --card: 220 12% 8%;
+    --card-foreground: 45 15% 92%;
+
+    --popover: 220 12% 8%;
+    --popover-foreground: 45 15% 92%;
+
+    /* Cores primárias - Cinza escuro das penas superiores */
+    --primary: 210 20% 20%;
+    --primary-foreground: 45 15% 95%;
+    --primary-glow: 210 25% 35%;
+
+    /* Cores secundárias - Branco das partes inferiores */
+    --secondary: 45 15% 95%;
+    --secondary-foreground: 210 20% 15%;
+
+    /* Cores suaves - tons neutros */
+    --muted: 220 8% 15%;
+    --muted-foreground: 220 8% 65%;
+
+    /* Accent - Amarelo das pernas e pés */
+    --accent: 45 95% 58%;
+    --accent-foreground: 210 20% 15%;
+
+    /* Cores de alerta */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 45 15% 95%;
+
+    --border: 220 8% 20%;
+    --input: 220 8% 15%;
+    --ring: 45 95% 58%;
+
+    /* Gradients majestosos */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(220 15% 12%));
+    --gradient-feather: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-wing: linear-gradient(180deg, hsl(220 8% 25%), hsl(220 8% 15%));
+
+    /* Shadows com efeito de profundidade */
+    --shadow-wing: 0 25px 50px -12px hsl(220 15% 0% / 0.8);
+    --shadow-feather: 0 10px 30px -5px hsl(var(--accent) / 0.3);
+    --shadow-elegant: 0 20px 40px -15px hsl(220 15% 0% / 0.6);
+
+    /* Animações suaves como o voo da harpia */
+    --transition-flight: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Modo alternativo com tons mais claros */
+  .light {
+    --background: 45 25% 96%;
+    --foreground: 220 15% 15%;
+
+    --card: 45 15% 98%;
+    --card-foreground: 220 15% 15%;
+
+    --primary: 210 20% 25%;
+    --primary-foreground: 45 15% 95%;
+
+    --secondary: 45 15% 92%;
+    --secondary-foreground: 210 20% 20%;
+
+    --accent: 45 95% 55%;
+    --accent-foreground: 210 20% 15%;
+
+    --border: 220 8% 85%;
+    --input: 220 8% 90%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(45 20% 92%));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background: var(--gradient-hero);
+    min-height: 100vh;
+    overflow-x: hidden;
+    /* Otimizações de performance */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeSpeed;
+    will-change: scroll-position;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    /* Otimização para scrolling */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Otimizar elementos 3D */
+  canvas {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+}
+
+@layer components {
+
+  /* Efeito de penas em movimento - otimizado para performance */
+  .feather-float {
+    animation: featherFloat 6s ease-in-out infinite;
+    will-change: transform;
+    transform: translateZ(0);
+  }
+
+  .wing-spread {
+    animation: wingSpread 8s ease-in-out infinite;
+    will-change: transform;
+    transform: translateZ(0);
+  }
+
+  /* Efeito de texto majestoso */
+  .text-majesty {
+    background: var(--gradient-feather);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: majesticShimmer 3s ease-in-out infinite;
+  }
+
+  /* Hero button com efeito dourado */
+  .btn-royal {
+    background: var(--gradient-wing);
+    border: 2px solid hsl(var(--accent));
+    box-shadow: var(--shadow-feather);
+    transition: var(--transition-smooth);
+  }
+
+  .btn-royal:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-elegant);
+    background: var(--gradient-feather);
+  }
+
+  /* Scroll indicator com tema harpia */
+  .scroll-indicator {
+    border: 2px solid hsl(var(--accent));
+    box-shadow: 0 0 20px hsl(var(--accent) / 0.5);
+  }
+}
+
+@keyframes featherFloat {
+
+  0%,
+  100% {
+    transform: translate3d(0, 0px, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(0, -20px, 0) rotate(5deg);
+  }
+}
+
+@keyframes wingSpread {
+
+  0%,
+  100% {
+    transform: scale3d(1, 1, 1) rotateY(0deg);
+  }
+
+  50% {
+    transform: scale3d(1.1, 1.1, 1) rotateY(10deg);
+  }
+}
+
+@keyframes majesticShimmer {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
