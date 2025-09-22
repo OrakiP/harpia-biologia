@@ -136,6 +136,33 @@ export default function CharacteristicsSection() {
           </Card>
         </motion.div>
 
+        {/* Image Placeholders Section */}
+        <motion.div
+          className="mt-16 mb-8"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="aspect-video rounded-xl overflow-hidden border-2 border-accent/30">
+              <img 
+                src="/assets/harpia.jpg" 
+                alt="Anatomia detalhada da Harpia" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            <div className="aspect-video rounded-xl overflow-hidden border-2 border-primary-glow/30">
+              <img 
+                src="/assets/harpia2.jpg" 
+                alt="Comparação de tamanho - Harpia vs outras aves" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </motion.div>
+
         {/* Development Info */}
         <motion.div
           className="mt-16 text-center"
@@ -163,6 +190,23 @@ export default function CharacteristicsSection() {
               </div>
             </div>
           </Card>
+        </motion.div>
+
+        {/* Final Image Placeholder */}
+        <motion.div
+          className="mt-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="aspect-[21/9] rounded-xl overflow-hidden border-2 border-secondary/30">
+            <img 
+              src="/assets/harpia3.jpg" 
+              alt="Evolução da Harpia - Ciclo de vida completo" 
+              className="w-full h-full object-cover"
+            />
+          </div>
         </motion.div>
       </div>
     </section>

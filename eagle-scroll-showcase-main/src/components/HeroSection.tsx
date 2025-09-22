@@ -27,14 +27,22 @@ export default function HeroSection({ scrollProgress, onScrollToNext, onNavigate
           transition={{ duration: 0.6, delay: 0.1 }}
         >
           <motion.div
-            className="mb-6 flex justify-center md:justify-start"
+            className="mb-6 flex flex-wrap gap-3 justify-center md:justify-start"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <span className="inline-flex items-center px-4 py-2 rounded-full bg-accent/20 text-accent text-sm font-medium mb-6">
+            <span className="inline-flex items-center px-4 py-2 rounded-full bg-accent/20 text-accent text-sm font-medium">
               <span className="w-2 h-2 bg-accent rounded-full mr-2 animate-pulse" />
-              Harpia harpyja
+              Espécie: Harpia harpyja
+            </span>
+            <span className="inline-flex items-center px-4 py-2 rounded-full bg-primary-glow/20 text-primary-glow text-sm font-medium">
+              <span className="w-2 h-2 bg-primary-glow rounded-full mr-2 animate-pulse" />
+              Família: Accipitridae
+            </span>
+            <span className="inline-flex items-center px-4 py-2 rounded-full bg-secondary/30 text-secondary-foreground text-sm font-medium">
+              <span className="w-2 h-2 bg-secondary rounded-full mr-2 animate-pulse" />
+              Ordem: Accipitriformes
             </span>
           </motion.div>
 
